@@ -1,2 +1,1 @@
-coverage/*.json
-coverage/*.lock
+coverage

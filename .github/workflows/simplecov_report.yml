@@ -1,7 +1,7 @@
 name: Run RSpec tests
 on: [pull_request]
 jobs:
-  run-rspec-tests:
+  run-simplecov-report:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -13,8 +13,7 @@ jobs:
       - name: Run tests
         run: |
           bundle exec rspec
-      - name: Add code coverage comment
-        uses: romeovs/lcov-reporter-action@v0.2.16
+      - name: Simplecov Report
+        uses: aki77/simplecov-report-action@v1
         with:
-          lcov-file: ./coverage/lcov/simplecov-reports.lcov
-          github-token: ${{ github.token }}
+          token: ${{ github.token }}
