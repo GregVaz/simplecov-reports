@@ -1,6 +1,40 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/gregoriovaz/Documents/projects/simplecov-reports/lib/complex_math.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/gregoriovaz/Documents/projects/simplecov-reports/spec/simple_math_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/gregoriovaz/Documents/projects/simplecov-reports/lib/simple_math.rb": {
         "lines": [
           1,
@@ -15,6 +49,6 @@
         ]
       }
     },
-    "timestamp": 1656007261
+    "timestamp": 1656010939
   }
 }

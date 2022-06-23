@@ -18,3 +18,4 @@ jobs:
         with:
           lcov-file: ./coverage/lcov/simplecov-reports.lcov
           github-token: ${{ github.token }}
+          filter-changed-files: true
