@@ -66,6 +66,6 @@ jobs:
 
       - uses: kzkn/simplecov-resultset-diff-action@v1
         with:
-          base-resultset-path: ./base-result.zip/.resultset.json
-          head-resultset-path: ./head-result.zip/.resultset.json
+          base-resultset-path: ./base-result/.resultset.json
+          head-resultset-path: ./head-result/.resultset.json
           token: ${{ github.token }}
