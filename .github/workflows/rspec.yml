@@ -19,3 +19,4 @@ jobs:
           lcov-file: ./coverage/lcov/simplecov-reports.lcov
           github-token: ${{ github.token }}
           filter-changed-files: true
+          delete-old-comments: true
