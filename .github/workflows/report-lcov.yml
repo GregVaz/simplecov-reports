@@ -1,0 +1,30 @@
+name: RSpec with SimpleCov for a Gem
+on: [pull_request]
+jobs:
+  run-upload-coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby 2.5
+        uses: ruby/setup-ruby@477b21f02be01bcb8030d50f37cfec92bfa615b6
+        with:
+          ruby-version: 2.5.5
+          bundler-cache: true
+      - name: Run tests
+        run: |
+          gem install bundler -v '2.0.2'
+          bundle install --jobs 4 --retry 3
+          COVERAGE=true bundle exec rspec
+      - name: Upload coverage results
+        uses: actions/upload-artifact@master
+        if: always()
+        with:
+          name: coverage-report
+          path: coverage
+      - name: Report code coverage
+        uses: zgosalvez/github-actions-report-lcov@v1
+        with:
+          coverage-files: coverage/lcov/simplecov-reports.lcov
+          minimum-coverage: 80
+          artifact-name: code-coverage-report
+          github-token: ${{ github.token }}

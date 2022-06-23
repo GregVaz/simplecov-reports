@@ -1,7 +1,7 @@
 name: RSpec with SimpleCov for a Gem
 on: [pull_request]
 jobs:
-  run-rspec-tests:
+  run-upload-coverage:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
