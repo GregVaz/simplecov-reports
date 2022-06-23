@@ -1,7 +1,7 @@
 name: RSpec with SimpleCov for a Gem
 on: [pull_request]
 jobs:
-  run-upload-coverage:
+  run-lcov-report:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -28,4 +28,4 @@ jobs:
           minimum-coverage: 80
           artifact-name: code-coverage-report
           github-token: ${{ github.token }}
-          working-directory: ./lib/
+          working-directory: ./lib
