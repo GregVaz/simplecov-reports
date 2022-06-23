@@ -16,4 +16,5 @@ jobs:
       - name: Add code coverage comment
         uses: romeovs/lcov-reporter-action@v0.2.16
         with:
-          lcov-file: ./coverage/lcov/ruby-simplecov.info
+          lcov-file: ./coverage/lcov/simplecov-reports.lcov
+          github-token: ${{ github.token }}
