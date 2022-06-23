@@ -31,6 +31,7 @@ jobs:
           name: base-result
           path: coverage/.resultset.json
   build-head:
+    name: "Build head"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -65,6 +66,6 @@ jobs:
 
       - uses: kzkn/simplecov-resultset-diff-action@v1
         with:
-          base-resultset-path: ./base-result/.resultset.json
-          head-resultset-path: ./head-result/.resultset.json
+          base-resultset-path: /home/runner/work/simplecov-reports/simplecov-reports/base-result/.resultset.json
+          head-resultset-path: /home/runner/work/simplecov-reports/simplecov-reports/head-result/.resultset.json
           token: ${{ github.token }}
