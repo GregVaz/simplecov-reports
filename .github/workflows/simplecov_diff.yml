@@ -6,21 +6,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      with:
-        ref: ${{ github.base_ref }}
+        with:
+          ref: ${{ github.base_ref }}
       - id: base-ref-commit
         run: echo "::set-output name=revision::`git rev-parse HEAD`"
       - name: simplecov resultset cache
         id: simplecov-resultset
-        uses:  actions/cache@v2
+        uses: actions/cache@v2
         with:
           path: coverage/.resultset.json
           key: simplecov-resultset-${{ steps.base-ref-commit.outputs.revision }}
       - name: Set up Ruby 2.5
-          uses: ruby/setup-ruby@477b21f02be01bcb8030d50f37cfec92bfa615b6
-          with:
-            ruby-version: 2.5.5
-            bundler-cache: true
+        uses: ruby/setup-ruby@477b21f02be01bcb8030d50f37cfec92bfa615b6
+        with:
+          ruby-version: 2.5.5
+          bundler-cache: true
       - name: Run test
         if: steps.simplecov-resultset.outputs.cache-hit != 'true'
         run: bundle exec rspec
@@ -52,7 +52,6 @@ jobs:
     name: "Compare base & head coverages"
     runs-on: ubuntu-latest
     needs: [build-base, build-head]
-
     steps:
       - name: Download base artifact
         uses: actions/download-artifact@v1
