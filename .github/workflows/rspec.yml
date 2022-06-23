@@ -1,4 +1,4 @@
-name: Run RSpec tests
+name: RSpec with SimpleCov for a Gem
 on: [pull_request]
 jobs:
   run-rspec-tests:
@@ -12,8 +12,12 @@ jobs:
           bundler-cache: true
       - name: Run tests
         run: |
-          bundle exec rspec
-      - name: Add code coverage comment
-        uses: romeovs/lcov-reporter-action@v0.2.16
+          gem install bundler -v '2.0.2'
+          bundle install --jobs 4 --retry 3
+          COVERAGE=true bundle exec rspec
+      - name: Upload coverage results
+        uses: actions/upload-artifact@master
+        if: always()
         with:
-          lcov-file: ./coverage/lcov/ruby-simplecov.info
+          name: coverage-report
+          path: coverage
