@@ -12,7 +12,9 @@
           1,
           null,
           null
-        ]
+        ],
+        "branches": {
+        }
       },
       "/Users/gregoriovaz/Documents/projects/simplecov-reports/lib/simple_math.rb": {
         "lines": [
@@ -25,9 +27,11 @@
           1,
           null,
           null
-        ]
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1656015627
+    "timestamp": 1656016363
   }
 }
