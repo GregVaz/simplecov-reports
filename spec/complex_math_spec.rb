@@ -8,10 +8,4 @@ RSpec.describe Math do
       expect(ComplexMath.multiplication(1, 2)).to eq(2)
     end
   end
-
-  describe '#divison' do
-    it 'divides two numbers' do
-      expect(ComplexMath.divison(6, 3)).to eq(2)
-    end
-  end
 end
