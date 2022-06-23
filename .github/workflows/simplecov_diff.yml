@@ -1,7 +1,7 @@
 name: Run RSpec tests
 on: [pull_request]
 jobs:
-  run-simplecov-diff:
+  build-head:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
